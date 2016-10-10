@@ -1,0 +1,30 @@
+<p>
+  <strong>Name:</strong>
+  <%= @shelter.name %>
+</p>
+
+<p>
+  <strong>Pets Available:</strong>
+  <%= @shelter.pets_available %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @shelter.address %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @shelter.email %>
+</p>
+
+<p>
+  <strong>Phone:</strong>
+  <%= @shelter.phone %>
+</p>
+
+<p>
+  <strong>About:</strong>
+  <%= "Unavailable" if @shelter.about.nil? %>
+  <%=  @shelter.about if !@shelter.about.nil? %>
+</p>

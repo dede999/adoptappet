@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
   devise_for :users, :controllers => { :registrations => 'users' }
+  resources :users, only: [:show] do
+    resources :shelters
+  end
 
   root :to => "home#index"
   # The priority is based upon order of creation: first created -> highest priority.

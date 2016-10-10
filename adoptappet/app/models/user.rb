@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+  has_many :shelter, dependent: :destroy
   has_attached_file :avatar
   validates_attachment_content_type :avatar, :content_type => %w(image/jpeg image/jpg image/png)
   # Include default devise modules. Others available are:
