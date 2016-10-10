@@ -32,7 +32,7 @@
   </div>
 
   <div class="field">
-    <%= image_tag @user.avatar, :size => "150x150" %>
+    <%= image_tag @user.avatar, :size => "150x150" if @user.avatar.instance.avatar_file_name %>
     <%= f.label :avatar %>
     <%= f.file_field :avatar %>
   </div>
