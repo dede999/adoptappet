@@ -1,0 +1,24 @@
+<h1>My Shelters</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Pets Available</th>
+    <th>Address</th>
+    <th>Email</th>
+    <th>Phone</th>
+  </tr>
+
+  <% @shelter.each do |shelter| %>
+    <tr>
+      <td><%= shelter.name %></td>
+      <td><%= shelter.pets_available %></td>
+      <td><%= shelter.address %></td>
+      <td><%= shelter.email %></td>
+      <td><%= shelter.phone %></td>
+      <td><%= link_to 'Show', user_shelter_path(current_user.id, shelter.id) %></td>
+    </tr>
+  <% end %>
+</table>
+
+<%= link_to 'Home', root_path %>
