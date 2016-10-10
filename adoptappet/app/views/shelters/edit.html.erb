@@ -1,0 +1,32 @@
+<h1>Edit Shelter</h1>
+
+<%= form_for :shelter, url: user_shelter_path(current_user.id, @shelter.id), method: :patch do |f| %>
+  <p>
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </p>
+
+  <p>
+    <%= f.label :address %><br>
+    <%= f.text_field :address %>
+  </p>
+
+  <p>
+    <%= f.label :phone %><br>
+    <%= f.text_field :phone %>
+  </p>
+
+  <p>
+    <%= f.label :pets_available %><br>
+    <%= f.number_field :pets_available, min: 0 %>
+  </p>
+
+  <p>
+    <%= f.label :about %><br>
+    <%= f.text_area :about %>
+  </p>
+
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>

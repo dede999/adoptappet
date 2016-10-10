@@ -17,6 +17,7 @@
       <td><%= shelter.email %></td>
       <td><%= shelter.phone %></td>
       <td><%= link_to 'Show', user_shelter_path(current_user.id, shelter.id) %></td>
+      <td><%= link_to 'Edit', edit_user_shelter_path(current_user.id, shelter.id) %></td>
     </tr>
   <% end %>
 </table>

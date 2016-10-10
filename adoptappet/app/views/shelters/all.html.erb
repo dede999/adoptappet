@@ -16,7 +16,7 @@
       <td><%= shelter.address %></td>
       <td><%= shelter.email %></td>
       <td><%= shelter.phone %></td>
-      <td><%= link_to 'Show', shelters_path(shelter.owner_id, shelter.id) %></td>
+      <td><%= link_to 'Show', user_shelter_path(shelter.owner_id, shelter.id) %></td>
     </tr>
   <% end %>
 </table>
