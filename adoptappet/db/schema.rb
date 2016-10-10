@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(version: 20161010154736) do
     t.string   "address",                    null: false
     t.string   "phone"
     t.integer  "pets_available", default: 0, null: false
+    t.integer  "owner_id",                   null: false
     t.text     "about"
     t.datetime "created_at",                 null: false
     t.datetime "updated_at",                 null: false

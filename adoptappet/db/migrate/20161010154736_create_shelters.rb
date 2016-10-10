@@ -6,6 +6,7 @@ class CreateShelters < ActiveRecord::Migration
       t.string :address,            null: false
       t.string :phone
       t.integer :pets_available,    null: false, default: 0
+      t.integer :owner_id,          null: false
       t.text :about
 
       t.timestamps null: false

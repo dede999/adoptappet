@@ -1,11 +1,14 @@
 class SheltersController < ApplicationController
+  def all
+    @user = current_user
+    @shelter = Shelter.all
+  end
+
   def create
     @user = current_user
     @shelter = Shelter.new(params.require(:shelter).permit(:name, :address, :phone, :pets_available, :about))
-
-    p @shelter.about
-
     @shelter.email = current_user.email
+    @shelter.owner_id = current_user.id
     @shelter.save
     redirect_to user_shelter_path(@user.id, @shelter.id)
   end
@@ -16,7 +19,12 @@ class SheltersController < ApplicationController
 
   def index
     @user = current_user
-    @shelter = Shelter.all
+    @shelter = []
+    all_shelters = Shelter.all
+
+    all_shelters.each do |shelter|
+      @shelter << shelter if shelter.owner_id == @user.id
+    end
   end
 
   def show
