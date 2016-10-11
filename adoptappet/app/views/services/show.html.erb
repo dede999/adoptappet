@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<!-- por motivo de simplicidade, estou deixando a modelagem gráfica para outra ocasião -->
+<p>
+  <strong>Prestador de serviço:</strong>
+  <%= @service.name %>
+</p>
+
+<p>
+  <strong>Descrição:</strong>
+  <%= @service.description %>
+</p>
+
+<p>
+  <strong>Endereço:</strong>
+  <%= @service.address %>
+</p>
+
+<p>
+  <strong>Telefone:</strong>
+  <%= @service.phone %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @service.email %>
+</p>
+
+<p>
+  <strong>Tipo:</strong>
+  <%= @service.type %>
+</p>
+
+<!-- <%= link_to 'Edit', edit_service_path(@service) %>-->
+<%= link_to 'Back', services_path %>

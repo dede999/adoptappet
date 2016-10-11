@@ -1,0 +1,16 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Services</h1>
+
+<%	@tipos.each do |t|  %>
+  <h2><%= t %></h2><br>
+    <% Service.all.where(:type => t).each do |s| %>
+      <div class="servico">
+        <h4><%=	s.name %></h4> <i><h6><%= s.email %></h6></i> <br>
+        <p> <%=	s.address %> <%= link_to 'Ver Mais', s %> </p>
+      </div>
+    <% end %>
+
+<%	end  %>
+
+<!--<%= link_to 'New Service', new_service_path %>-->
