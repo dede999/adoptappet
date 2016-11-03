@@ -1,4 +1,4 @@
 class Service < ActiveRecord::Base
-  validate :name, :address, :phone, :email, presence:true
-  validate :name, :uniqueness => true
+  validates :name, :address, :phone, :email, presence:true
+  validates :name, :uniqueness => true
 end

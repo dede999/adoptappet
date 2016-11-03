@@ -2,33 +2,52 @@
 <html>
 <head>
   <title>Adoptappet</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://code.getmdl.io/1.2.1/material.teal-light_green.min.css" />
+  <script defer src="https://code.getmdl.io/1.2.1/material.min.js"></script>
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <div class="navbar navbar-fixed-top">
-    <div class="navbar-inner">
-      <div class="container">
-        <p class="navbar-text pull-right">
+
+  <div class=".mdl-layout mdl-js-layout mdl-layout--fixed-header">
+    <div class="mdl-layout__header">
+      <div class="mdl-layout__header-row">
+        <h3 class="mdl-layout-title"> Pet-Get </h3>
+        <div class="mdl-layout-spacer"></div>
+        <nav class="mdl-navigation">
           <% if user_signed_in? %>
-            Logged in as <strong><%= current_user.email %></strong>.
-            <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> |
-            <%= link_to 'All Shelters', shelters_path, :class => 'navbar-link' %> |
-            <%= link_to 'My Shelters', user_shelters_path(current_user.id), :class => 'navbar-link' %> |
-            <%= link_to 'New shelter', new_user_shelter_path(current_user.id), :class => 'navbar-link' %> |
-            <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
-          <% else %>
-            <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
-            <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
+              <%= link_to 'Abrigos', shelters_path, :class => 'mdl-navigation__link' %>
+              <%= link_to 'Meus abrigos', user_shelters_path(current_user.id), :class => 'mdl-navigation__link' %>
+              <%= link_to 'Novo Abrigo', new_user_shelter_path(current_user.id), :class => 'mdl-navigation__link' %>
+              <!-- Right aligned menu below button -->
+              <button id="demo-menu-lower-right"
+                      class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent"><strong> <%= current_user.email %> </strong>
+              </button>
+
+              <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect"
+                  for="demo-menu-lower-right">
+                <%=	link_to 'Editar Perfil', edit_user_registration_path, class: 'mdl-menu__item' %>
+                <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'mdl-menu__item'  %>
+              </ul>
+        <% else %>
+              <%= link_to "Sign up", new_user_registration_path, :class => 'mdl-navigation__link'  %>
+              <%= link_to "Login", new_user_session_path, :class => 'mdl-navigation__link'  %>
           <% end %>
-        </p>
+        </nav>
       </div>
     </div>
+
+    <main class="mdl-layout__content">
+      <%= yield %>
+    </main>
   </div>
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
-  <%= yield %>
 
 </body>
 </html>
+
+<!--
+
+-->
