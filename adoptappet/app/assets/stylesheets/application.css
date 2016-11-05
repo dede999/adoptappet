@@ -13,6 +13,8 @@
  *= require_tree .
  *= require_self
  */
-.mdl-typography--text-uppercase {
+.mdl-layout-title > a {
     font-weight: 700;
+    color: white;
+    text-decoration: none;
 }

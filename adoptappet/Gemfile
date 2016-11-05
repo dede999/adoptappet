@@ -23,7 +23,7 @@ gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
 # File attachment library for ActiveRecord
-gem 'paperclip', github: 'thoughtbot/paperclip'
+gem 'paperclip'
 # User authentication handler
 gem 'devise'
 

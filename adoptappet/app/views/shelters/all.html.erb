@@ -1,24 +1,33 @@
-<h1>All Shelters</h1>
+<div class="mld-grid">
+  <div class="mdl-cell-row">
+    <h2 class="mdl-cell--12" style="text-align: center"> Os Abrigos </h2>
+    <hr>
+  </div>
+</div>
 
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Pets Available</th>
-    <th>Address</th>
-    <th>Email</th>
-    <th>Phone</th>
-  </tr>
+<div class="mdl-grid">
+    <% @shelter.each do |shelter| %>
+      <div class="mdl-cell--2-col">
+        <div class="mdl-card">
+          <div class="mdl-card__title">
+            <h4 class="mdl-card__title-text"> <%= shelter.name %> </h4>
+          </div>
 
-  <% @shelter.each do |shelter| %>
-    <tr>
-      <td><%= shelter.name %></td>
-      <td><%= shelter.pets_available %></td>
-      <td><%= shelter.address %></td>
-      <td><%= shelter.email %></td>
-      <td><%= shelter.phone %></td>
-      <td><%= link_to 'Show', user_shelter_path(shelter.owner_id, shelter.id) %></td>
-    </tr>
-  <% end %>
-</table>
+          <div class="mdl-card__supporting-text">
+            <span> Pets disponíveis: <strong> <%= shelter.pets_available %> </strong> </span> <br>
+            <span> Endereço: <strong> <%= shelter.address %> </strong> </span> <br>
+            <span> Email: <strong> <%= shelter.email %> </strong> </span> <br>
+            <span> Telefone: <strong> <%= shelter.phone %> </strong> </span> <br>
+          </div>
+
+          <div class="mdl-card__actions">
+            <button class="mdl-button mdl-js-button mdl-button--accent">
+              <%= link_to 'Mostrar', user_shelter_path(shelter.owner_id, shelter.id) %>
+            </button>
+          </div>
+        </div>
+      </div>
+    <% end %>
+</div>
 
 <%= link_to 'Home', root_path %>
