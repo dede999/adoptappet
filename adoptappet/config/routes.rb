@@ -1,11 +1,11 @@
 Rails.application.routes.draw do
-  resources :services
   devise_for :users, :controllers => { :registrations => 'users' }
   resources :users, only: [:show] do
     resources :shelters
+    resources :services
   end
   get 'shelters', :to => 'shelters#all'
-  #resources :shelters, only: [:index]
+  get 'services', :to => 'services#all'
 
   root :to => "home#index"
   # The priority is based upon order of creation: first created -> highest priority.

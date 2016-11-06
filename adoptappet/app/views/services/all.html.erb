@@ -1,12 +1,12 @@
 <div class="mld-grid">
   <div class="mdl-cell-row">
-    <h2 class="mdl-cell--12" style="text-align: center"> Meus Serviços </h2>
+    <h2 class="mdl-cell--12" style="text-align: center"> Os Serviços </h2>
     <hr>
   </div>
 </div>
 
 <div class="mdl-grid">
-  <% @service.each do |service| %>
+    <% @service.each do |service| %>
       <div class="mdl-cell--2-col">
         <div class="mdl-card">
           <div class="mdl-card__title">
@@ -25,7 +25,7 @@
           </div>
         </div>
       </div>
-  <% end %>
+    <% end %>
 </div>
 
 <%= link_to 'Home', root_path %>

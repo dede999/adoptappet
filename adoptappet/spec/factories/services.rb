@@ -5,5 +5,7 @@ FactoryGirl.define do
     phone "MyString"
     email "MyString"
     type ""
+    about "MyText"
+    owner_id 1
   end
 end

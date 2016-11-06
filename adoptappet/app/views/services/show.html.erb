@@ -1,24 +1,11 @@
-<p id="notice"><%= notice %></p>
-
-<!-- por motivo de simplicidade, estou deixando a modelagem gráfica para outra ocasião -->
 <p>
-  <strong>Prestador de serviço:</strong>
+  <strong>Name:</strong>
   <%= @service.name %>
 </p>
 
 <p>
-  <strong>Descrição:</strong>
-  <%= @service.description %>
-</p>
-
-<p>
-  <strong>Endereço:</strong>
+  <strong>Address:</strong>
   <%= @service.address %>
-</p>
-
-<p>
-  <strong>Telefone:</strong>
-  <%= @service.phone %>
 </p>
 
 <p>
@@ -27,9 +14,17 @@
 </p>
 
 <p>
-  <strong>Tipo:</strong>
-  <%= @service.type %>
+  <strong>Phone:</strong>
+  <%= @service.phone %>
 </p>
 
-<!-- <%= link_to 'Edit', edit_service_path(@service) %>-->
-<%= link_to 'Back', services_path %>
+<p>
+  <strong>Type:</strong>
+  <%= @service.service_type %>
+</p>
+
+<p>
+  <strong>About:</strong>
+  <%= "Unavailable" if @service.about.nil? %>
+  <%=  @service.about if !@service.about.nil? %>
+</p>

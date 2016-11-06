@@ -25,7 +25,7 @@ development:
   <<: *default
   database: adoptappet
   host: localhost
-  username: oem
+  username: adoptappet
   password: <%= ENV['ADOPTAPPET_DATABASE_PASSWORD'] %>
 
   # The specified database role being used to connect to postgres.
@@ -62,7 +62,7 @@ test:
   <<: *default
   database: adoptappet_test
   host: localhost
-  username: oem
+  username: adoptappet_test
   password: <%= ENV['ADOPTAPPET_TEST_DATABASE_PASSWORD'] %>
 
 # As with config/secrets.yml, you never want to store sensitive information,

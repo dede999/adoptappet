@@ -21,7 +21,10 @@
           <% if user_signed_in? %>
               <%= link_to 'Abrigos', shelters_path, :class => 'mdl-navigation__link' %>
               <%= link_to 'Meus abrigos', user_shelters_path(current_user.id), :class => 'mdl-navigation__link' %>
-              <%= link_to 'Novo Abrigo', new_user_shelter_path(current_user.id), :class => 'mdl-navigation__link' %>
+              <%= link_to 'Novo abrigo', new_user_shelter_path(current_user.id), :class => 'mdl-navigation__link' %>
+              <%= link_to 'Serviços', services_path, :class => 'mdl-navigation__link' %>
+              <%= link_to 'Meus serviços', user_services_path(current_user.id), :class => 'mdl-navigation__link' %>
+              <%= link_to 'Novo serviço', new_user_service_path(current_user.id), :class => 'mdl-navigation__link' %>
               <!-- Right aligned menu below button-->
               <button id="demo-menu-lower-right"
                       class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent">
