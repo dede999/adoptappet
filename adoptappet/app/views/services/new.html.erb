@@ -18,7 +18,7 @@
 
   <p>
     <%= f.label :service_type %><br>
-    <%= f.text_field :service_type %>
+    <%= f.select :service_type, options_for_select(["Veterinário", "Adestrador", "Pet Shop", "Babá", "Passeador"]) %>
   </p>
 
   <p>
