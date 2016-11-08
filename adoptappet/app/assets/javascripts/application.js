@@ -14,3 +14,14 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+$(document).ready(function () {
+    $('nav.mdl-navigation').children().mouseenter(function () {
+        $(this).css('text-align', 'center');
+        $(this).prepend('<strong>');
+        $(this).append('</strong>');
+    });
+    $('nav.mdl-navigation').children().mouseleave(function () {
+        $(this).css('text-align', 'left');
+    });
+});

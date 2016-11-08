@@ -18,3 +18,15 @@
     color: white;
     text-decoration: none;
 }
+
+.titulo1 {
+    border-bottom: 2px solid silver;
+}
+
+i.material-icons > a {
+    color: red;
+}
+
+/*nav.mdl-navigation > a.mdl-navigation__link {
+    background-color: #1b5e20;
+}*/

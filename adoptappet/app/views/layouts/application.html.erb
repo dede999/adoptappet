@@ -4,7 +4,7 @@
   <title>Adoptappet</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true%>
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   <link rel="stylesheet" href="https://code.getmdl.io/1.2.1/material.teal-light_green.min.css" />
   <script defer src="https://code.getmdl.io/1.2.1/material.min.js"></script>
@@ -12,37 +12,40 @@
 </head>
 <body>
 
-  <div class="viewport mdl-layout mdl-js-layout mdl-layout--fixed-header">
-    <div class="mdl-layout__header">
+  <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+    <header class="mdl-layout__header">
       <div class="mdl-layout__header-row">
+        <span class="material-icons">pets</span>
         <h3 class="mdl-layout-title"> <%=	link_to 'Pet-Get', root_url %> </h3>
         <div class="mdl-layout-spacer"></div>
         <nav class="mdl-navigation">
           <% if user_signed_in? %>
-              <%= link_to 'Abrigos', shelters_path, :class => 'mdl-navigation__link' %>
-              <%= link_to 'Meus abrigos', user_shelters_path(current_user.id), :class => 'mdl-navigation__link' %>
-              <%= link_to 'Novo abrigo', new_user_shelter_path(current_user.id), :class => 'mdl-navigation__link' %>
-              <%= link_to 'Serviços', services_path, :class => 'mdl-navigation__link' %>
-              <%= link_to 'Meus serviços', user_services_path(current_user.id), :class => 'mdl-navigation__link' %>
-              <%= link_to 'Novo serviço', new_user_service_path(current_user.id), :class => 'mdl-navigation__link' %>
-              <!-- Right aligned menu below button-->
-              <button id="demo-menu-lower-right"
-                      class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent">
-                <strong> <%= current_user.email %> </strong>
-              </button>
-
-              <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect"
-                  for="demo-menu-lower-right">
-                <%=	link_to 'Editar Perfil', edit_user_registration_path, class: 'mdl-menu__item' %>
-                <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'mdl-menu__item'  %>
-              </ul>
-        <% else %>
-              <%= link_to "Sign up", new_user_registration_path, :class => 'mdl-navigation__link'  %>
-              <%= link_to "Login", new_user_session_path, :class => 'mdl-navigation__link'  %>
+            <%=	link_to current_user.email, edit_user_registration_path, :class => 'mdl-button mdl-js-button mdl-button--raised mdl-button--accent' %>
+            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" style="background-color: white; margin-left: 10px">
+              <i class="material-icons"><%= link_to "exit_to_app", destroy_user_session_path, method: :delete%></i>
+            </button>
+            <!-- Right aligned menu below button-->
+          <% else %>
+            <%= link_to "Sign up", new_user_registration_path, :class => 'mdl-navigation__link'  %>
+            <%= link_to "Login", new_user_session_path, :class => 'mdl-navigation__link'  %>
           <% end %>
         </nav>
       </div>
-    </div>
+    </header>
+    <% if user_signed_in? %>
+      <div class="mdl-layout__drawer">
+        <span class="mdl-layout-title titulo1" style="right: 10%">Menu dos Pet Lovers</span>
+        <nav class="mdl-navigation">
+          <%= link_to 'Abrigos', shelters_path, :class => 'mdl-navigation__link' %>
+          <%= link_to 'Meus abrigos', user_shelters_path(current_user.id), :class => 'mdl-navigation__link' %>
+          <%= link_to 'Novo abrigo', new_user_shelter_path(current_user.id), :class => 'mdl-navigation__link titulo1' %>
+          <%= link_to 'Serviços', services_path, :class => 'mdl-navigation__link' %>
+          <%= link_to 'Meus serviços', user_services_path(current_user.id), :class => 'mdl-navigation__link' %>
+          <%= link_to 'Novo serviço', new_user_service_path(current_user.id), :class => 'mdl-navigation__link titulo1' %>
+          <hr>
+        </nav>
+      </div>
+    <% end %>
 
     <div class="mdl-layout__content">
       <main>
