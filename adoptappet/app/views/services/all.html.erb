@@ -6,11 +6,12 @@
 </div>
 
 <div class="mdl-grid">
-    <% @service.each do |service| %>
-      <div class="mdl-cell--2-col">
-        <div class="mdl-card">
+  <% @service.each do |service| %>
+      <div class="mdl-cell mdl-cell--3-col">
+        <div class="mdl-card mdl-shadow--4dp" style="width: auto">
+
           <div class="mdl-card__title">
-            <h4 class="mdl-card__title-text"> <%= service.name %> </h4>
+            <h1 class="mdl-card__title-text" style="text-align: center"><%= service.name %></h1>
           </div>
 
           <div class="mdl-card__supporting-text">
@@ -20,12 +21,19 @@
             <span> Tipo: <strong> <%= service.service_type %> </strong> </span> <br>
           </div>
 
-          <div class="mdl-card__actions">
-            <%= button_to 'Mostrar', user_service_path(service.owner_id, service.id), method: 'get' %>
+          <div class="mdl-card__actions mdl-card--border" style="text-align: center">
+            <%= button_to 'Mostrar', user_service_path(service.owner_id, service.id), method: 'get',
+                          class: 'mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent'%>
           </div>
         </div>
       </div>
-    <% end %>
+  <% end %>
 </div>
 
-<%= link_to 'Home', root_path %>
+<div class="mld-grid">
+  <div class="mdl-cell-row" style="text-align: center">
+    <span class="material-icons" style="font-size: 60px"><%= link_to 'home', root_path %></span>
+    <hr>
+  </div>
+</div>
+

@@ -7,10 +7,11 @@
 
 <div class="mdl-grid">
     <% @shelter.each do |shelter| %>
-      <div class="mdl-cell--2-col">
-        <div class="mdl-card">
+      <div class="mdl-cell mdl-cell--3-col">
+        <div class="mdl-card mdl-shadow--4dp" style="width: auto">
+
           <div class="mdl-card__title">
-            <h4 class="mdl-card__title-text"> <%= shelter.name %> </h4>
+            <h1 class="mdl-card__title-text" style="text-align: center"><%= shelter.name %></h1>
           </div>
 
           <div class="mdl-card__supporting-text">
@@ -20,12 +21,19 @@
             <span> Telefone: <strong> <%= shelter.phone %> </strong> </span> <br>
           </div>
 
-          <div class="mdl-card__actions">
-            <%= button_to 'Mostrar', user_shelter_path(shelter.owner_id, shelter.id), method: 'get' %>
+          <div class="mdl-card__actions mdl-card--border" style="text-align: center">
+            <%=	button_to 'Mostrar', user_shelter_path(shelter.owner_id, shelter.id), method: 'get',
+                           class: 'mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent' %>
           </div>
         </div>
       </div>
     <% end %>
 </div>
 
-<%= link_to 'Home', root_path %>
+<div class="mld-grid">
+  <div class="mdl-cell-row" style="text-align: center">
+    <span class="material-icons" style="font-size: 60px"><%= link_to 'home', root_path %></span>
+    <hr>
+  </div>
+</div>
+

@@ -4,7 +4,7 @@
   <title>Adoptappet</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true%>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => false%>
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   <link rel="stylesheet" href="https://code.getmdl.io/1.2.1/material.teal-light_green.min.css" />
   <script defer src="https://code.getmdl.io/1.2.1/material.min.js"></script>
@@ -23,8 +23,8 @@
             <%=	link_to current_user.email, edit_user_registration_path, :class => 'mdl-button mdl-js-button mdl-button--raised mdl-button--accent' %>
             <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" style="background-color: white; margin-left: 10px">
               <i class="material-icons"><%= link_to "exit_to_app", destroy_user_session_path, method: :delete%></i>
+              <!-- <%=	button_to 'exit_to_app', destroy_user_session_path, method: :delete, class: 'material-icons' %> -->
             </button>
-            <!-- Right aligned menu below button-->
           <% else %>
             <%= link_to "Sign up", new_user_registration_path, :class => 'mdl-navigation__link'  %>
             <%= link_to "Login", new_user_session_path, :class => 'mdl-navigation__link'  %>
@@ -34,7 +34,7 @@
     </header>
     <% if user_signed_in? %>
       <div class="mdl-layout__drawer">
-        <span class="mdl-layout-title titulo1" style="right: 10%">Menu dos Pet Lovers</span>
+        <span class="mdl-layout-title titulo1" style="right: 5%">Menu dos Pet Lovers</span>
         <nav class="mdl-navigation">
           <%= link_to 'Abrigos', shelters_path, :class => 'mdl-navigation__link' %>
           <%= link_to 'Meus abrigos', user_shelters_path(current_user.id), :class => 'mdl-navigation__link' %>
@@ -58,6 +58,5 @@
 </body>
 </html>
 
-<!--
 
 -->

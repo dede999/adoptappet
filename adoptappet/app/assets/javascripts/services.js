@@ -15,10 +15,12 @@
 //= require_tree .
 
 $(document).ready(function () {
-    $('nav.mdl-navigation').children().mouseenter(function () {
-        $(this).css('text-align', 'center');
+    $('mdl-card').mouseenter(function () {
+        $(this).css('font-size', '+61px');
+        $(this).children('mdl-card__title').css('background-color', 'coral');
     });
-    $('nav.mdl-navigation').children().mouseleave(function () {
-        $(this).css('text-align', 'left');
+    $('mdl-card').mouseleave(function () {
+        $(this).css('font-size', '-61px');
+        $(this).children('mdl-card__title').css('background-color', '#DADADA');
     });
 });
