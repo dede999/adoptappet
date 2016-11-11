@@ -13,14 +13,3 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
-
-$(document).ready(function () {
-    $('mdl-card').mouseenter(function () {
-        $(this).css('font-size', '+61px');
-        $(this).children('mdl-card__title').css('background-color', 'coral');
-    });
-    $('mdl-card').mouseleave(function () {
-        $(this).css('font-size', '-61px');
-        $(this).children('mdl-card__title').css('background-color', '#DADADA');
-    });
-});
