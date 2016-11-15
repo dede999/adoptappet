@@ -1,3 +1,23 @@
-// Place all the styles related to the Shelters controller here.
+// Place all the styles related to the Services controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.mdl-card__title {
+  background-color: #DADADA;
+}
+
+.no-meio {
+  margin-left: 10%;
+  width: 80%;
+  background-color: #e6ffb3;
+  border: 2px dashed green;
+  border-radius: 3px;
+}
+
+form {
+  padding: 10px 10px 1px 10px;
+}
+
+.mdl-textfield {
+  font-size: x-large;
+}

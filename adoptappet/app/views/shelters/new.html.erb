@@ -1,32 +1,41 @@
-<h1>New Shelter</h1>
+<div class="mld-grid" xmlns="http://www.w3.org/1999/html">
+  <div class="mdl-cell-row">
+    <h2 class="mdl-cell--12" style="text-align: center"> Novo Abrigo </h2>
+    <hr>
+  </div>
+</div>
 
-<%= form_for :shelter, url: user_shelters_path(current_user.id) do |f| %>
-  <p>
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
-  </p>
+<div class="no-meio">
+  <%= form_for :service, url: user_services_path(current_user.id) do |f| %>
 
-  <p>
-    <%= f.label :address %><br>
-    <%= f.text_field :address %>
-  </p>
+      <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+        <%= f.text_field :name, pattern: '[A-Za-z0-9 ]*', class: 'mdl-textfield__input' %>
+        <strong style="font-size: xx-large"><%= f.label :name, class: 'mdl-textfield__label' %></strong>
+        <span class="mdl-textfield__error">Use Letras e números</span>
+      </div>
 
-  <p>
-    <%= f.label :phone %><br>
-    <%= f.text_field :phone %>
-  </p>
+      <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+        <%= f.text_field :address, class: 'mdl-textfield__input' %>
+        <strong><%= f.label :address, class: 'mdl-textfield__label' %></strong>
+      </div>
 
-  <p>
-    <%= f.label :pets_available %><br>
-    <%= f.number_field :pets_available, min: 0 %>
-  </p>
+      <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+        <%= f.text_field :phone, class: 'mdl-textfield__input' %>
+        <strong><%= f.label :phone, class: 'mdl-textfield__label' %></strong>
+      </div>
 
-  <p>
-    <%= f.label :about %><br>
-    <%= f.text_area :about %>
-  </p>
+      <p>
+        <%= f.label :pets_available %><br>
+        <%= f.number_field :pets_available, min: 0 %>
+      </p>
 
-  <p>
-    <%= f.submit %>
-  </p>
-<% end %>
+      <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+        <%= f.text_area :about, class: 'mdl-textfield__input' %>
+        <strong><%= f.label :about, class: 'mdl-textfield__label' %></strong>
+      </div>
+
+      <p>
+        <%= f.submit %>
+      </p>
+  <% end %>
+</div>

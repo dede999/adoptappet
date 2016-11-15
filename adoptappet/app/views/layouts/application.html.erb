@@ -20,9 +20,10 @@
         <div class="mdl-layout-spacer"></div>
         <nav class="mdl-navigation">
           <% if user_signed_in? %>
-            <%=	link_to current_user.email, edit_user_registration_path, :class => 'mdl-button mdl-js-button mdl-button--raised mdl-button--accent' %>
+            <%=	link_to current_user.email, edit_user_registration_path,
+                     :class => 'mdl-button mdl-js-button mdl-button--raised mdl-button--accent mdl-cell--hide-phone' %>
             <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" style="background-color: white; margin-left: 10px">
-              <i class="material-icons"><%= link_to "exit_to_app", destroy_user_session_path, method: :delete%></i>
+            <i class="material-icons"><%= link_to "exit_to_app", destroy_user_session_path, method: :delete%></i>
               <!-- <%=	button_to 'exit_to_app', destroy_user_session_path, method: :delete, class: 'material-icons' %> -->
             </button>
           <% else %>
@@ -34,8 +35,13 @@
     </header>
     <% if user_signed_in? %>
       <div class="mdl-layout__drawer">
-        <span class="mdl-layout-title titulo1" style="right: 5%">Menu dos Pet Lovers</span>
+        <span class="mdl-layout-title titulo1" style="right: 0%">
+          <span class="material-icons" style="font-size: small">pets</span> Menu dos Pet Lovers <!--<span class="material-icons" style="font-size: small">pets</span>-->
+        </span>
         <nav class="mdl-navigation">
+          <%=	link_to current_user.email, edit_user_registration_path,
+                   :class => 'mdl-button mdl-js-button mdl-cell--hide-desktop mdl-cell--hide-tablet' %>
+          <hr>
           <%= link_to 'Abrigos', shelters_path, :class => 'mdl-navigation__link' %>
           <%= link_to 'Meus abrigos', user_shelters_path(current_user.id), :class => 'mdl-navigation__link' %>
           <%= link_to 'Novo abrigo', new_user_shelter_path(current_user.id), :class => 'mdl-navigation__link titulo1' %>
@@ -57,6 +63,3 @@
 
 </body>
 </html>
-
-
--->
