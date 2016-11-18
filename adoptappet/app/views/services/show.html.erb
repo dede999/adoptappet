@@ -1,30 +1,52 @@
 <p>
-  <strong>Name:</strong>
+
+</p>
+
+<table width="280" cellspacing=1" cellpadding="3" border="0" align="center" bgcolor="#44AA00">
+<tr>
+   <td><font color="#FFFFFF" face="arial, verdana, helvetica">
+<b><p>
+  <strong>Tipo do serviço:</strong>
+  <%= @service.service_type %>
+</p></b>
+   </font></td>
+</tr>
+<tr>
+   <td bgcolor="#ffffcc">
+   <font face="arial, verdana, helvetica">
+   
+<p>
+
+</p>
+
+<p>
+  <strong>Nome:</strong>
   <%= @service.name %>
 </p>
 
 <p>
-  <strong>Address:</strong>
+  <strong>Endereço:</strong>
   <%= @service.address %>
 </p>
 
 <p>
-  <strong>Email:</strong>
+  <strong>E-mail:</strong>
   <%= @service.email %>
 </p>
 
 <p>
-  <strong>Phone:</strong>
+  <strong>Telefone:</strong>
   <%= @service.phone %>
 </p>
 
 <p>
-  <strong>Type:</strong>
-  <%= @service.service_type %>
-</p>
-
-<p>
-  <strong>About:</strong>
+  <strong>Descrição:</strong>
   <%= "Unavailable" if @service.about.nil? %>
   <%=  @service.about if !@service.about.nil? %>
 </p>
+
+   </font>
+   </td>
+</tr>
+</table>
+
