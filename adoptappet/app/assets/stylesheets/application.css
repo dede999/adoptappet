@@ -23,6 +23,27 @@
     border-bottom: 2px solid silver;
 }
 
-i.material-icons > a {
-    color: red;
+@media (min-width: 840px) {
+
+    .logo {
+        margin-top: 20px;
+        height: 75px;
+        width: 75px;
+    }
+
+    .mdl-layout__header {
+        height: 85px;
+    }
+
+    h3.mdl-layout-title {
+        font-size: 65px;
+    }
+
+    h3.mdl-layout-title > a:hover{
+        text-decoration: none;
+    }
+
+    .mdl-layout__header {
+        top: 10px;
+    }
 }

@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Adoptappet</title>
+  <title>Pet - Get </title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => false%>
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-  <link rel="stylesheet" href="https://code.getmdl.io/1.2.1/material.teal-light_green.min.css" />
+  <link rel="stylesheet" href="https://code.getmdl.io/1.2.1/material.light_green-red.min.css" />
   <script defer src="https://code.getmdl.io/1.2.1/material.min.js"></script>
   <%= csrf_meta_tags %>
 </head>
@@ -15,17 +15,15 @@
   <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
     <header class="mdl-layout__header">
       <div class="mdl-layout__header-row">
-        <span class="material-icons">pets</span>
-        <h3 class="mdl-layout-title"> <%=	link_to 'Pet-Get', root_url %> </h3>
+        <%=	image_tag('oie.png', class: 'logo')%>
+        <h3 class="mdl-layout-title" style="margin-top: 30px"> <%=	link_to 'Pet-Get', root_url %> </h3>
         <div class="mdl-layout-spacer"></div>
-        <nav class="mdl-navigation">
+        <nav class="mdl-navigation" style="margin-top: 20px">
           <% if user_signed_in? %>
             <%=	link_to current_user.email, edit_user_registration_path,
                      :class => 'mdl-button mdl-js-button mdl-button--raised mdl-button--accent mdl-cell--hide-phone' %>
-            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" style="background-color: white; margin-left: 10px">
-            <i class="material-icons"><%= link_to "exit_to_app", destroy_user_session_path, method: :delete%></i>
-              <!-- <%=	button_to 'exit_to_app', destroy_user_session_path, method: :delete, class: 'material-icons' %> -->
-            </button>
+            <%= link_to "Logout", destroy_user_session_path, method: :delete,
+                  class: 'mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect'%>
           <% else %>
             <%= link_to "Sign up", new_user_registration_path, :class => 'mdl-navigation__link'  %>
             <%= link_to "Login", new_user_session_path, :class => 'mdl-navigation__link'  %>
