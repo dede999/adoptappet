@@ -1,30 +1,50 @@
 <p>
-  <strong>Name:</strong>
+
+</p>
+
+<table width="280" cellspacing=1" cellpadding="3" border="1" align="center" bgcolor="#44AA00">
+
+<tr>
+   <td bgcolor="#ffffcc">
+   <font face="arial, verdana, helvetica">
+   
+<p>
+  
+<p>
+
+<p>
+  <strong>Nome:</strong>
   <%= @shelter.name %>
 </p>
 
 <p>
-  <strong>Pets Available:</strong>
+  <strong>Pets Disponíveis:</strong>
   <%= @shelter.pets_available %>
 </p>
 
 <p>
-  <strong>Address:</strong>
+  <strong>Endereço:</strong>
   <%= @shelter.address %>
 </p>
 
 <p>
-  <strong>Email:</strong>
+  <strong>E-mail:</strong>
   <%= @shelter.email %>
 </p>
 
 <p>
-  <strong>Phone:</strong>
+  <strong>Telefone:</strong>
   <%= @shelter.phone %>
 </p>
 
 <p>
-  <strong>About:</strong>
+  <strong>Descrição:</strong>
   <%= "Unavailable" if @shelter.about.nil? %>
   <%=  @shelter.about if !@shelter.about.nil? %>
 </p>
+
+   </font>
+   </td>
+</tr>
+</table>
+
