@@ -24,7 +24,6 @@
 }
 
 @media (min-width: 840px) {
-
     .logo {
         margin-top: 20px;
         height: 75px;
@@ -45,5 +44,45 @@
 
     .mdl-layout__header {
         top: 10px;
+    }
+}
+
+@media (min-width: 480px) and (max-width: 839px){
+    .logo {
+        margin-top: 22px;
+        height: 70px;
+        width: 70px;
+    }
+
+    .mdl-layout__header {
+        height: 75px;
+    }
+
+    h3.mdl-layout-title {
+        font-size: 50px;
+    }
+
+    h3.mdl-layout-title > a:hover{
+        text-decoration: none;
+    }
+
+    .mdl-layout__header {
+        top: 15px;
+    }
+}
+
+@media (max-width: 479px) {
+    .logo {
+        margin-top: 5px;
+        height: 50px;
+        width: 50px;
+    }
+
+    h3.mdl-layout-title {
+        font-size: 32px;
+    }
+
+    .mdl-layout__header {
+        top: 5px;
     }
 }

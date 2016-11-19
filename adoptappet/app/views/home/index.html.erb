@@ -1,8 +1,59 @@
 <a name="hi"></a>
-<div class="primeira mdl-typography--text-center">
+<div class="primeira mdl-typography--text-center" style="background-image: url(<%= image_path 'dog_pres.png'%>);background-size: cover">
   <div class="mdl-grid">
-    <div class="mdl-cell-row">
-      <div class=""></div>
+    <div class="mdl-cell mdl-cell--6-col-desktop mdl-cell--4-col-tablet mdl-cell--4-col-phone ">
+      <h3 style="color: white">Bem vindos ao PetGet</h3>
+      <% unless user_signed_in?%>
+        <h6 style="color: white"> <%= greeting Time.now.hour %>, clique em Inscreva-se para mais informações </h6>
+      <%	else %>
+        <h6 style="color: white"> <%= greeting Time.now.hour %>, explore o site e conheça nossas novidades e serviços</h6>
+      <% end %>
+    </div>
+
+    <div class="mdl-cell mdl-cell--6-col-desktop mdl-cell--4-col-tablet mdl-cell--4-col-phone">
+    </div>
+  </div>
+</div>
+
+<a name="missao">
+  <div class="segunda mdl-typography--text-center">
+    <h3>Nossa Missão</h3>
+    <h6>Nossa missão é levar a você os melhores serviços para seu pet com a maior comodidade</h6>
+  </div>
+</a>
+
+<a name="serv"></a>
+<div class="terceira mdl-typography--text-center" style="background-image: url(<%= image_path 'dog_pres1.png'%>);background-size: cover">
+  <div class="mdl-grid">
+    <div class="mdl-cell mdl-cell--6-col-desktop mdl-cell--4-col-tablet mdl-cell--4-col-phone " style="background-color: darkgreen; color: lightgreen">
+      <h3>Serviços</h3>
+      <h6> Esses são os tipos de serviços que oferecemos</h6>
+    </div>
+
+    <div class="mdl-cell mdl-cell--6-col-desktop mdl-cell--4-col-tablet mdl-cell--4-col-phone" style="background-color: darkgreen; color: lightgreen">
+      <% ["Veterinário", "Adestrador", "Pet Shop", "Babá", "Passeador"].each do |s| %>
+          <li> <%= s %> </li>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<a name="bottom"></a>
+<div class="quarta mdl-typography--text-center" style="background-color: lightgreen; color: darkgreen">
+  <div class="mdl-grid">
+    <div class="mdl-cell mdl-cell--6-col-desktop mdl-cell--4-col-tablet mdl-cell--4-col-phone">
+      <% if user_signed_in? %>
+        <h2> Bem vindo ao futuro maior portal de cuidados pet do Brasil </h2>
+        <h5> Agora que você está conosco, que tal explorar o site e achar a melhor oferta do dia?</h5>
+      <% else %>
+        <h3> Inscreva-se </h3>
+        <h6> Conheça nossas vantagens</h6> <br><br>
+        <%= link_to "Inscreva-se", new_user_registration_path, :class => 'mdl-button mdl-js-button mdl-button--raised mdl-button--accent mdl-cell--hide-phone'  %>
+        <%= link_to "Entre", new_user_session_path, :class => 'mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect'  %>
+      <% end %>
+    </div>
+    <div class="mdl-cell mdl-cell--6-col-desktop mdl-cell--4-col-tablet mdl-cell--4-col-phone">
+      <%=	image_tag 'oie.png' %>
     </div>
   </div>
 </div>

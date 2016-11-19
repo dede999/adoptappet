@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Pet - Get </title>
+  <title>Pet Get </title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => false%>
@@ -18,38 +18,43 @@
         <%=	image_tag('oie.png', class: 'logo')%>
         <h3 class="mdl-layout-title" style="margin-top: 30px"> <%=	link_to 'Pet-Get', root_url %> </h3>
         <div class="mdl-layout-spacer"></div>
-        <nav class="mdl-navigation" style="margin-top: 20px">
+        <nav class="mdl-navigation" style="margin-top: 15px">
           <% if user_signed_in? %>
             <%=	link_to current_user.email, edit_user_registration_path,
                      :class => 'mdl-button mdl-js-button mdl-button--raised mdl-button--accent mdl-cell--hide-phone' %>
             <%= link_to "Logout", destroy_user_session_path, method: :delete,
                   class: 'mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect'%>
-          <% else %>
-            <%= link_to "Sign up", new_user_registration_path, :class => 'mdl-navigation__link'  %>
-            <%= link_to "Login", new_user_session_path, :class => 'mdl-navigation__link'  %>
           <% end %>
         </nav>
       </div>
     </header>
-    <% if user_signed_in? %>
-      <div class="mdl-layout__drawer">
-        <span class="mdl-layout-title titulo1" style="right: 0%">
-          <span class="material-icons" style="font-size: small">pets</span> Menu dos Pet Lovers <!--<span class="material-icons" style="font-size: small">pets</span>-->
-        </span>
+
+    <div class="mdl-layout__drawer">
+      <span class="mdl-layout-title titulo1" style="right: 0%">
+        <span class="material-icons" style="font-size: small">pets</span> Menu dos Pet Lovers <!--<span class="material-icons" style="font-size: small">pets</span>-->
+      </span>
+      <% if user_signed_in? %>
         <nav class="mdl-navigation">
           <%=	link_to current_user.email, edit_user_registration_path,
                    :class => 'mdl-button mdl-js-button mdl-cell--hide-desktop mdl-cell--hide-tablet' %>
           <hr>
+          <%= link_to 'Serviços', services_path, :class => 'mdl-navigation__link' %>
+          <%= link_to 'Meus serviços', user_services_path(current_user.id), :class => 'mdl-navigation__link' %>
+          <%= link_to 'Trabalhe conosco', new_user_service_path(current_user.id), :class => 'mdl-navigation__link titulo1' %>
           <%= link_to 'Abrigos', shelters_path, :class => 'mdl-navigation__link' %>
           <%= link_to 'Meus abrigos', user_shelters_path(current_user.id), :class => 'mdl-navigation__link' %>
           <%= link_to 'Novo abrigo', new_user_shelter_path(current_user.id), :class => 'mdl-navigation__link titulo1' %>
-          <%= link_to 'Serviços', services_path, :class => 'mdl-navigation__link' %>
-          <%= link_to 'Meus serviços', user_services_path(current_user.id), :class => 'mdl-navigation__link' %>
-          <%= link_to 'Novo serviço', new_user_service_path(current_user.id), :class => 'mdl-navigation__link titulo1' %>
           <hr>
         </nav>
-      </div>
-    <% end %>
+      <%	else  %>
+          <nav class="mdl-navigation">
+            <a class="mdl-navigation__link" href="#missao"> Nossa Missão </a>
+            <a class="mdl-navigation__link" href="#serv"> Nossos Serviços </a>
+            <a class="mdl-navigation__link" href="#bottom"> Se Inscreva </a>
+          </nav>
+      <% end %>
+    </div>
+
 
     <div class="mdl-layout__content">
       <main>
