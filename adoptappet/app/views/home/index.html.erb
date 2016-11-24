@@ -4,9 +4,9 @@
     <div class="mdl-cell mdl-cell--6-col-desktop mdl-cell--4-col-tablet mdl-cell--4-col-phone ">
       <h3 style="color: white">Bem vindos ao PetGet</h3>
       <% unless user_signed_in?%>
-        <h6 style="color: white"> <%= greeting Time.now.hour %>, clique em Inscreva-se para mais informações </h6>
+        <h6 style="color: white"> <%= greeting Time.now.hour %> <br> Clique em Inscreva-se para mais informações </h6>
       <%	else %>
-        <h6 style="color: white"> <%= greeting Time.now.hour %>, explore o site e conheça nossas novidades e serviços</h6>
+        <h6 style="color: white"> <%= greeting Time.now.hour %> <br> explore o site e conheça nossas novidades e serviços</h6>
       <% end %>
     </div>
 

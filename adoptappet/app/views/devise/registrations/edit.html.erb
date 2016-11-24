@@ -20,7 +20,7 @@
       <% end %>
 
       <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-        <%= f.password_field :password, autocomplete: "off", pattern: '[\d|\w]{6}', class: 'mdl-textfield__input' %>
+        <%= f.password_field :password, autocomplete: "off", pattern: '[\d|\w]{6}[\d|\w]*', class: 'mdl-textfield__input' %>
         <strong style="font-size: xx-large"> <%= f.label 'Senha', class: 'mdl-textfield__label' %> </strong>
         <span class="mdl-textfield__error">6 caracteres no mínimo</span>
       </div>
