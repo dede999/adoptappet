@@ -48,12 +48,12 @@
       <% else %>
         <h3> Inscreva-se </h3>
         <h6> Conheça nossas vantagens</h6> <br><br>
-        <%= link_to "Inscreva-se", new_user_registration_path, :class => 'mdl-button mdl-js-button mdl-button--raised mdl-button--accent mdl-cell--hide-phone'  %>
+        <%= link_to "Inscreva-se", new_user_registration_path, :class => 'mdl-button mdl-js-button mdl-button--raised mdl-button--accent'  %>
         <%= link_to "Entre", new_user_session_path, :class => 'mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect'  %>
       <% end %>
     </div>
     <div class="mdl-cell mdl-cell--6-col-desktop mdl-cell--4-col-tablet mdl-cell--4-col-phone">
-      <%=	image_tag 'oie.png' %>
+      <%=	image_tag 'oie.png', class: 'imagem' %>
     </div>
   </div>
 </div>

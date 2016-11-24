@@ -45,6 +45,9 @@
     .mdl-layout__header {
         top: 10px;
     }
+    .metade {
+        width: 50%;
+    }
 }
 
 @media (min-width: 480px) and (max-width: 839px){
@@ -69,6 +72,13 @@
     .mdl-layout__header {
         top: 15px;
     }
+    .metade {
+        width: 50%;
+    }
+    .imagem {
+        width: 350px;
+        height: 350px;
+    }
 }
 
 @media (max-width: 479px) {
@@ -85,4 +95,19 @@
     .mdl-layout__header {
         top: 5px;
     }
+    .metade {
+        width: 100%;
+    }
+    .imagem {
+        width: 200px;
+        height: 200px;
+    }
+}
+
+.esquerda {
+    float: left;
+}
+
+.direita {
+    float: right;
 }
